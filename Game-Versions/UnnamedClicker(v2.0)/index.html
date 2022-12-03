@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Unnamed Clicker</title>
+</head>
+<body>
+    <div class="center">
+        <div class="content">
+            <p id="counter">Click To Start</p>
+            <button id="btn"></button>
+            <div class="container rightsec" style="overflow-y: scroll; overflow-x: hidden;">
+                <div class="container widthww">
+                    <p>Upgrades:</p>
+                    <button id="upg1" class="upg">Upgrade To 2x Per Click<br>Click Cost: 100</button>
+                    <button id="upg2" class="upg" style="display: none;">Upgrade To 4x Per Click<br>Click Cost: 250</button>
+                    <button id="upg3" class="upg" style="display: none;">Upgrade To 8x Per Click<br>Click Cost: 500</button>
+                    <button id="upg4" class="upg" style="display: none;">Upgrade To 16x Per Click<br>Click Cost: 1000</button>
+                    <button id="upg5" class="upg" style="display: none;">Upgrade To 32x Per Click<br>Click Cost: 2500</button>
+                    <button id="upg6" class="upg" style="display: none;">Upgrade To 64x Per Click<br>Click Cost: 5000</button>
+                    <button id="upg7" class="upg" style="display: none;">Upgrade To 128x Per Click<br>Click Cost: 10000</button>
+                </div>
+            </div>
+            <div class="container leftsec" style="overflow-y: scroll; overflow-x: hidden;">
+                <div class="container widthww">
+                    <p>Color</p>
+                    <button id="btnred" class="btn">Red</button>
+                    <button id="btngreen" class="btn">Green</button>
+                    <button id="btnblue" class="btn">Blue</button><br>
+                    <button id="btnblank" class="btn">Custom</button>
+                </div>
+                <div class="container widthww">
+                    <p>Options</p>
+                    <button id="openach" class="btn">Achievements</button>
+                    <button id="lighttheme" class="btn">Light Mode</button>
+                    <button id="darktheme" style="display: none;" class="btn">Dark Mode</button>
+                </div>
+            </div>
+            <div id="achmenu" style="display: none;">
+                <p style="font-size: 30px; color: var(--text); margin: 10px;">Achievements</p>
+                <div>
+                    <div class="achieve" id="a1" style="border: 1px solid var(--text); box-shadow: 0px 0px 25px var(--text); display: none;">
+                        <h3 style="font-size: 15px;">Beginner</h3><br>
+                        <p style="font-size: 12px;">Gotta start somewhere (Clicked once)</p>
+                    </div>
+                    <div class="achieve" id="a2" style="border: 1px solid var(--text); box-shadow: 0px 0px 25px var(--text); display: none;">
+                        <h3 style="font-size: 15px;">Starter</h3><br>
+                        <p style="font-size: 12px;">Purchased 2x per click upgrade</p>
+                    </div>
+                    <div class="achieve" id="a3" style="border: 1px solid #00ff00; box-shadow: 0px 0px 25px #00ff00; display: none;">
+                        <h3 style="font-size: 15px; color: #00ff00;">Getting Better</h3><br>
+                        <p style="font-size: 12px;">Purchased 4x per click upgrade</p>
+                    </div>
+                    <div class="achieve" id="a4" style="border: 1px solid #0080ff; box-shadow: 0px 0px 25px #0080ff; display: none;">
+                        <h3 style="font-size: 15px; color: #0080ff;">Skilled Clicker</h3><br>
+                        <p style="font-size: 12px;">Purchased 8x per click upgrade</p>
+                    </div>
+                    <div class="achieve" id="a5" style="border: 1px solid #8000ff; box-shadow: 0px 0px 25px #8000ff; display: none;">
+                        <h3 style="font-size: 15px; color: #8000ff;">Fast Clicker</h3><br>
+                        <p style="font-size: 12px;">Purchased 16x per click upgrade</p>
+                    </div>
+                    <div class="achieve" id="a6" style="border: 1px solid #ff8000; box-shadow: 0px 0px 25px #ff8000; display: none;">
+                        <h3 style="font-size: 15px; color: #ff8000;">Pro Clicker</h3><br>
+                        <p style="font-size: 12px;">Purchased 32x per click upgrade</p>
+                    </div>
+                    <div class="achieve" id="a7" style="border: 1px solid #ff0000; box-shadow: 0px 0px 25px #ff0000; display: none;">
+                        <h3 style="font-size: 15px; color: #ff0000;">Master Clicker</h3><br>
+                        <p style="font-size: 12px;">Purchased 64x per click upgrade</p>
+                    </div>
+                    <div class="achieve" id="a8" style="border: 1px solid #00ff80; box-shadow: 0px 0px 25px #00ff80; display: none;">
+                        <h3 style="font-size: 15px; color: #00ff80;">Auto Clicker?</h3><br>
+                        <p style="font-size: 12px;">Purchased 128x per click upgrade</p>
+                    </div>
+                    <div class="achieve" id="a9" style="border: 1px solid var(--text); box-shadow: 0px 0px 25px var(--text); display: none;">
+                        <h3 style="font-size: 15px; color: var(--text);">Who turned the lights on!?</h3><br>
+                        <p style="font-size: 12px;">Switched to light mode</p>
+                    </div>
+                </div>
+                <button class="btn" id="closeach" style="position: fixed; bottom: 10px; right: 10px;">Close</button>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/index.js"></script>
+</body>
+</html>
