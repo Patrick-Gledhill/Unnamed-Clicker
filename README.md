@@ -6,3 +6,6 @@ A Clicker Game made by me.
 1. Click the green "Code" button.
 2. Switch to the HTTP tab and click download zip.
 3. Open the zip file and select a game version and open the "index.html" file.
+
+<h1>Testing</h1>
+<p>testing</p>
