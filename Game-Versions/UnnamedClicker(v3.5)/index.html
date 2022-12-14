@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Unnamed Clicker</title>
+</head>
+<body>
+    <div class="center">
+        <div class="content" id="ctxbox">
+            <p id="counter">Click To Start</p>
+            <button id="btn"></button>
+            <div id="devmenu" style="position: absolute; border: 1px solid #00ff00; border-radius: 10px; background: #202020; resize: both; overflow: auto; min-width: 200px; min-height: 150px; width: 350px; top: 40%; left: 40%; z-index: 9999999999999999; display: none;">
+                <p id="devmenuheader" style="color: #00ff00; border: 1px solid #00ff00; background: #404040; padding: 15px; border-radius: 10px; position: sticky; top: 0px; cursor: move;"><b>DEV MENU</b></p>
+                <button class="btn" id="getc" style="border-color: #00ff00; color: #00ff00; background: #202020; box-shadow: none;">Add Clicks</button>
+                <button class="btn" id="getach" style="border-color: #00ff00; color: #00ff00; background: #202020; box-shadow: none;">Get All Achievements</button>
+                <button class="btn" id="clearurl" style="border-color: #00ff00; color: #00ff00; background: #202020; box-shadow: none;">Clear URL</button>
+                <button class="btn" id="wipesavedev" style="border-color: #00ff00; color: #00ff00; background: #202020; box-shadow: none;">Clear User Data</button>
+                <button class="btn" id="rewaf" style="border-color: #00ff00; color: #00ff00; background: #202020; box-shadow: none;">Remove Watermark (Free)</button>
+                <button class="btn" id="closedevmenu" style="border-color: #404040; color: #ffffff; background: #202020; box-shadow: none;" onclick="devmenu.style.display = 'none'">Close</button>
+            </div>
+            <div class="menuscr" id="moremenu" style="display: none; opacity: 0;">
+                <h2>Options</h2>
+                <div class="container" style="display: inline-block;">
+                    <h3>Save Code</h3>
+                    <button class="btn" id="copyprog">Copy Save Code</button>
+                    <p>Click this to copy save code.</p>
+                </div>
+                <div class="container" style="display: inline-block;">
+                    <h3>Load Save Code</h3>
+                    <button class="btn" id="pasteprog">Import Save Code</button>
+                    <p>Click this to import save code.</p>
+                </div>
+                <div class="container" style="display: inline-block;">
+                    <h3>Other</h3>
+                    <button class="btn" id="wipesave">Wipe Save Data</button>
+                    <p style="color: #ff0000;">Warning! This Will Wipe All Your Save Data!</p>
+                </div>
+                <p style="position: absolute; bottom: 0px; left: 0px; font-size: 5px;" onclick="devmenu.style.display = 'block'">dev</p>
+                <button class="btn" id="closemoreopt" style="position: absolute; bottom: 0px; right: 0px;">Close</button>
+            </div>
+            <div class="container rightsec" style="overflow-y: scroll; overflow-x: hidden;">
+                <div class="container widthww">
+                    <p>Upgrades:</p>
+                    <button id="upg1" class="upg">Upgrade To 2x Per Click<br>Click Cost: 100</button>
+                    <button id="upg2" class="upg" style="display: none;">Upgrade To 4x Per Click<br>Click Cost: 500</button>
+                    <button id="upg3" class="upg" style="display: none;">Upgrade To 8x Per Click<br>Click Cost: 1000</button>
+                    <button id="upg4" class="upg" style="display: none;">Upgrade To 16x Per Click<br>Click Cost: 5000</button>
+                    <button id="upg5" class="upg" style="display: none;">Upgrade To 32x Per Click<br>Click Cost: 10000</button>
+                    <button id="upg6" class="upg" style="display: none;">Upgrade To 64x Per Click<br>Click Cost: 50000</button>
+                    <button id="upg7" class="upg" style="display: none;">Upgrade To 128x Per Click<br>Click Cost: 100000</button>
+                    <div class="greenmsg" id="maxupg" style="padding: 25px; display: none; background: #202020;">
+                        <p>Max Upgraded</p>
+                    </div>
+                    <div class="redmsg" id="noupg" style="padding: 25px; display: none;">
+                        <p>UPGRADES DELETED</p>
+                    </div>
+                </div>
+                <div class="container widthww">
+                    <p>Auto Clicker:</p>
+                    <button id="ac1" class="upg">Purchase Auto Clicker (1 Cps)<br>Click Cost: 1000</button>
+                    <button id="ac2" class="upg" style="display: none;">Upgrade Auto Clicker To 5 Cps<br>Click Cost: 5000</button>
+                    <button id="ac3" class="upg" style="display: none;">Upgrade Auto Clicker To 10 Cps<br>Click Cost: 10000</button>
+                    <button id="ac4" class="upg" style="display: none;">Upgrade Auto Clicker To 50 Cps<br>Click Cost: 50000</button>
+                    <button id="ac5" class="upg" style="display: none;">Upgrade Auto Clicker To 100 Cps<br>Click Cost: 100000</button>
+                    <div class="greenmsg" id="maxac" style="padding: 25px; display: none; background: #202020;">
+                        <p>Max Upgraded</p>
+                    </div>
+                    <div class="redmsg" id="noac" style="padding: 25px; display: none;">
+                        <p>UPGRADES DELETED</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container leftsec" style="overflow-y: scroll; overflow-x: hidden;">
+                <div class="container widthww">
+                    <p>Color</p>
+                    <button id="btnred" class="btn">Red</button>
+                    <button id="btnorange" class="btn">Orange</button>
+                    <button id="btnyellow" class="btn">Yellow</button>
+                    <button id="btngreen" class="btn">Green</button>
+                    <button id="btnblue" class="btn">Blue</button>
+                    <button id="btnpurple" class="btn">Purple</button>
+                    <button id="btnblank" class="btn">Custom</button>
+                    <div>
+                        <p>Experimental</p>
+                        <button id="btnrgb" class="btn">RGB</button>
+                    </div>
+                </div>
+                <div class="container widthww">
+                    <p>Options</p>
+                    <button id="openach" class="btn">Achievements</button>
+                    <button id="lighttheme" class="btn">Light Mode</button>
+                    <button id="darktheme" style="display: none;" class="btn">Dark Mode</button>
+                    <button id="moreset" class="btn">More...</button>
+                </div>
+                <div id="waterMark" style="position: absolute; bottom: 0px; left: 0px;"><b><u>Made By Patrick Gledhill</u></b></div>
+            </div>
+            <div id="achmenu" style="display: none; opacity: 0;">
+                <p style="font-size: 30px; color: var(--text); margin: 10px;">Achievements</p>
+                <div>
+                    <div class="achieve" id="a1" style="border: 1px solid var(--text); box-shadow: inset 0px 0px 15px var(--text), 0px 0px 15px var(--text); display: none;">
+                        <h3 style="font-size: 15px;">Beginner</h3><br>
+                        <p style="font-size: 12px;">Gotta start somewhere (Clicked once)</p>
+                    </div>
+                    <div class="achieve" id="a2" style="border: 1px solid var(--text); box-shadow: inset 0px 0px 15px var(--text), 0px 0px 15px var(--text); display: none;">
+                        <h3 style="font-size: 15px;">Starter</h3><br>
+                        <p style="font-size: 12px;">Purchased 2x per click upgrade</p>
+                    </div>
+                    <div class="achieve" id="a3" style="border: 1px solid #00ff00; box-shadow: inset 0px 0px 15px #00ff00, 0px 0px 15px #00ff00; display: none;">
+                        <h3 style="font-size: 15px; color: #00ff00;">Getting Better</h3><br>
+                        <p style="font-size: 12px;">Purchased 4x per click upgrade</p>
+                    </div>
+                    <div class="achieve" id="a4" style="border: 1px solid #0080ff; box-shadow: inset 0px 0px 15px #0080ff, 0px 0px 15px #0080ff; display: none;">
+                        <h3 style="font-size: 15px; color: #0080ff;">Skilled Clicker</h3><br>
+                        <p style="font-size: 12px;">Purchased 8x per click upgrade</p>
+                    </div>
+                    <div class="achieve" id="a5" style="border: 1px solid #8000ff; box-shadow: inset 0px 0px 15px #8000ff, 0px 0px 15px #8000ff; display: none;">
+                        <h3 style="font-size: 15px; color: #8000ff;">Fast Clicker</h3><br>
+                        <p style="font-size: 12px;">Purchased 16x per click upgrade</p>
+                    </div>
+                    <div class="achieve" id="a6" style="border: 1px solid #ff8000; box-shadow: inset 0px 0px 15px #ff8000, 0px 0px 15px #ff8000; display: none;">
+                        <h3 style="font-size: 15px; color: #ff8000;">Pro Clicker</h3><br>
+                        <p style="font-size: 12px;">Purchased 32x per click upgrade</p>
+                    </div>
+                    <div class="achieve" id="a7" style="border: 1px solid #ff0000; box-shadow: inset 0px 0px 15px #ff0000, 0px 0px 15px #ff0000; display: none;">
+                        <h3 style="font-size: 15px; color: #ff0000;">Master Clicker</h3><br>
+                        <p style="font-size: 12px;">Purchased 64x per click upgrade</p>
+                    </div>
+                    <div class="achieve" id="a8" style="border: 1px solid #00ff80; box-shadow: inset 0px 0px 15px #00ff80, 0px 0px 15px #00ff80; display: none;">
+                        <h3 style="font-size: 15px; color: #00ff80;">Auto Clicker?</h3><br>
+                        <p style="font-size: 12px;">Purchased 128x per click upgrade</p>
+                    </div>
+                    <div class="achieve" id="a11" style="border: 1px solid #00ff80; box-shadow: inset 0px 0px 15px #00ff80, 0px 0px 15px #00ff80; display: none;">
+                        <h3 style="font-size: 15px; color: #00ff80;">Serious Dedication</h3><br>
+                        <p style="font-size: 12px;">Clicked 1,000,000 times</p>
+                    </div>
+                    <div class="achieve" id="a9" style="border: 1px solid var(--text); box-shadow: inset 0px 0px 15px var(--text), 0px 0px 15px var(--text); display: none;">
+                        <h3 style="font-size: 15px; color: var(--text);">Who turned the lights on!?</h3><br>
+                        <p style="font-size: 12px;">Switched to light mode</p>
+                    </div>
+                    <div class="achieve" id="a10" style="border: 1px solid #0080ff; box-shadow: inset 0px 0px 15px #0080ff, 0px 0px 15px #0080ff; display: inline-block; background-image: url(./assets/toppng.com-cookie-png-chocolate-chip-cookie-379x384.png); background-size: 150%; background-position: center; display: none;">
+                        <h3 style="font-size: 15px; color: #0080ff; border-radius: 5px; backdrop-filter: blur(5px) brightness(50%); font-weight: bold;">Crumbl Cookie</h3><br>
+                        <p style="font-size: 12px; border-radius: 5px; backdrop-filter: blur(5px) brightness(50%); font-weight: bold; color: #ffffff;">Found the cookie</p>
+                    </div>
+                </div>
+                <button class="btn" id="closeach" style="position: fixed; bottom: 10px; right: 10px;">Close</button>
+            </div>
+            <img id="cookiee" src="./assets/toppng.com-cookie-png-chocolate-chip-cookie-379x384.png" alt="cookie" width="4px" height="4px" style="position: absolute; top: 5px; right: 5px; cursor: pointer;">
+        </div>
+    </div>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/nodesc.js"></script>
+    <script src="scripts/devmenu.js"></script>
+</body>
+</html>
